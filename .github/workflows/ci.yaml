@@ -1,4 +1,4 @@
-name: makeupbycarolinecastro.com CI
+name: makeupcarolcastro CI
 on:
   push:
     branches:
