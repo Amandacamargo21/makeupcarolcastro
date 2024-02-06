@@ -7,9 +7,43 @@ on:
 jobs: 
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout do repositório
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
+
+      - name: Setup do PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, zip, exif, pcntl
+
+      - name: Instalar dependências PHP
+        run: composer install
+
+      - name: Copiar arquivo de ambiente
+        run: cp .env.example .env
+
+      - name: Gerar chave de aplicativo Laravel
+        run: php artisan key:generate
+
+      - name: Configurar ambiente de teste
+        run: php artisan config:cache
+
+      - name: Rodar migrações do banco de dados
+        run: php artisan migrate --force
+
+      - name: Instalar dependências Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Instalar dependências JavaScript
+        run: npm install
+
+      - name: Build do Laravel Mix
+        run: npm run dev
+
       - name: Deploy para meu hosting
         uses: easingthemes/ssh-deploy@main
         env:
