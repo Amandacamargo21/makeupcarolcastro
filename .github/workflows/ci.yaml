@@ -30,9 +30,6 @@ jobs:
       - name: Configurar ambiente de teste
         run: php artisan config:cache
 
-      - name: Rodar migrações do banco de dados
-        run: php artisan migrate --force
-
       - name: Instalar dependências Node.js
         uses: actions/setup-node@v3
         with:
