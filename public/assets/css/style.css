@@ -1,0 +1,773 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500;700&family=Manrope:wght@200;400;500&family=Poppins:wght@100;200;300;500&display=swap');
+
+:root {
+  --title-font: 'Cormorant Garamond';
+  --description-text: 'Manrope';
+  --description-text2: 'Poppins';
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.contact_header {
+  background-color: #08080845;
+  padding: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.contacts {
+  display: flex;
+  justify-content: flex-end;
+  gap: 3%;
+}
+
+.parallax {
+  background-image: url('/assets/images/makeup-tools.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  position: relative;
+  background-position-y: 50%;
+}
+
+.container_logo {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.name {
+  font-family: var(--title-font);
+  color: #ffffff;
+  letter-spacing: 3px;
+}
+
+.main_logo {
+  font-weight: 400;
+  font-size: 55px;
+  background-color: #9191919e;
+}
+
+.main_description {
+  font-weight: 200;
+  font-size: 25px;
+  background-color: #9191919e;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff0;
+  font-family: var(--description-text2);
+  font-weight: 300;
+  flex-direction: row;
+  align-items: center;
+  height: 20%;
+}
+
+.logo img {
+  width: 30%;
+  height: auto;
+}
+
+nav {
+  display: flex;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav_links {
+  color: #F5D1D1;
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: 200;
+  margin: 0 30px;
+}
+
+.nav_links:hover {
+  background-color: #f5f5f537;
+}
+
+.container_1 {
+  background-color: aliceblue;
+  padding: 80px;
+  overflow-x: hidden;
+
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* MENU HAMBURGER */
+.checkbox-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox {
+  height: 100px;
+  width: 80px;
+  position: absolute;
+  top: 7%;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  transition: 400ms ease-in-out 0s;
+
+}
+
+.checkbox .trace {
+  width: 50px;
+  height: 2px;
+  background-color: #0f0f0f;
+  position: absolute;
+  border-radius: 4px;
+  transition: 0.5s ease-in-out;
+}
+
+.checkbox .trace:nth-child(1) {
+  top: 26px;
+  transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(2) {
+  top: 46px;
+  transform: rotate(0);
+
+}
+
+.checkbox .trace:nth-child(3) {
+  top: 66px;
+  transform: rotate(0);
+
+}
+
+#toggle {
+  display: none;
+}
+
+/* MENU */
+
+.menu {
+  position: absolute;
+  top: 28px;
+  right: 30px;
+  background: transparent;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 0px white;
+  z-index: -1;
+  transition: 500ms ease-in-out 0s;
+}
+
+.menu-items {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: 400ms ease-in-out 0s;
+}
+
+.menu-items ul {
+  list-style: none;
+
+}
+
+.menu-items ul li a {
+  margin: 10px 0;
+  color: #2e1c2b;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 40px;
+}
+
+/* ANIMAÇÃO DO MENU */
+
+#toggle:checked+.checkbox .trace:nth-child(1) {
+  transform: rotate(45deg);
+  background-color: #2e1c2b;
+  top: 47px;
+}
+
+#toggle:checked+.checkbox .trace:nth-child(2) {
+  /* transform: translateX(-100px); */
+  width: 30px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#toggle:checked+.checkbox .trace:nth-child(3) {
+  transform: rotate(-45deg);
+  background-color: #2e1c2b;
+  top: 48px;
+}
+
+#toggle:checked+.checkbox {
+  background-color: white;
+}
+
+#toggle:checked~.menu {
+  box-shadow: 0px 0px 0px 100vmax white;
+  z-index: 1;
+}
+
+#toggle:checked~.menu-items {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+/*Sobre mim*/
+
+.sobre_mim {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container_ {
+  background: #595959;
+  height: 80vh;
+  display: flex;
+  background-image: linear-gradient(2deg, #ffffff -7%, #52454500 50%);
+  justify-content: center;
+
+}
+
+.wrapper {
+  background: no-repeat center;
+  background-size: cover;
+
+}
+
+.photo {
+  background-image: url(/assets/images/fundo-preto-e-branco.jpg);
+  -webkit-mask-image: linear-gradient(270deg, transparent 0%, black 20%);
+  height: 80vh;
+  width: 35vw;
+  /* box-shadow: 5px 10px #888888; */
+  background-position: center;
+  background-size: cover;
+}
+
+.description {
+  width: 35%;
+  position: relative;
+  margin-right: 5%;
+}
+
+.desciption_text {
+  font-family: var(--description-text2);
+  font-weight: 200;
+  color: #fff;
+  line-height: 25px;
+  letter-spacing: 3px;
+}
+
+/*Portifólio*/
+
+.sub_titulo_serv {
+  font-family: var(--description-text2);
+  text-align: center;
+  font-weight: 300;
+  color: #ffffff;
+  letter-spacing: 2px;
+  font-size: 40px;
+}
+
+.sub_titulo {
+  font-family: var(--description-text2);
+  text-align: center;
+  font-weight: 300;
+  color: #000;
+  letter-spacing: 2px;
+  font-size: 40px;
+}
+
+.sub_titulo_name {
+  color: #BFBFBF;
+  font-family: var(--description-text2);
+  letter-spacing: 5px;
+  line-height: 50px;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.container {
+  background-color: #F2F2F2;
+  margin: auto;
+
+}
+
+.container_center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 80px;
+  gap: 80px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 5vw);
+  grid-gap: 1.5rem;
+}
+
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+.gallery__img:hover {
+  transform: scale(0.9);
+}
+
+.img4 {
+  object-position: 0 28%;
+}
+
+.img7 {
+  object-position: 22%;
+}
+
+.gallery__item--1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.gallery__item--2 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.gallery__item--3 {
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 1;
+  grid-row-end: 6;
+}
+
+.gallery__item--4 {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 6;
+}
+
+.gallery__item--5 {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 6;
+  grid-row-end: 9;
+}
+
+.gallery__item--6 {
+  grid-column-start: 5;
+  grid-column-end: 7;
+  grid-row-start: 6;
+  grid-row-end: 9;
+}
+
+.gallery__item--7 {
+  grid-column-start: 7;
+  grid-column-end: 9;
+  grid-row-start: 6;
+  grid-row-end: 9;
+}
+
+/*Serviços oferecidos*/
+
+.container2 {
+  margin: auto;
+  height: 60vh;
+  background-color: #A6886D;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.servicos {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  color: white;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  gap: 7%;
+}
+
+.servico__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--description-text2);
+  font-weight: 200;
+  gap: 10px;
+  text-align: center;
+}
+
+.servico__item__img {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+/* Depoimentos*/
+
+.container3 {
+  padding: 5% 20%;
+
+}
+
+.aspas {
+  font-size: 40px;
+  position: relative;
+  float: left;
+}
+
+.aspas-direita {
+  font-size: 40px;
+  position: relative;
+  float: right;
+  bottom: 40px;
+}
+
+.depoimentos {
+  margin: 10% 0 !important;
+}
+
+.slider {
+  width: 100%;
+}
+
+.slide {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+/*Feedbacks*/
+
+.container3 {
+  font-family: var(--description-text2);
+}
+
+
+/*Contato*/
+
+.container4 {
+  background-image: url(/assets/images/professional-make-up-brush.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contato {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+
+}
+
+.container_msg {
+  background-color: #00000036;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.msg_final {
+  font-weight: 200;
+  font-family: var(--description-text2);
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 40px;
+  letter-spacing: 7px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2%;
+}
+
+.whats_btn {
+  width: 20em;
+  height: 3em;
+  font-family: var(--description-text);
+  border-radius: 20px;
+  background-color: #2e9430;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0px 0px 10px 3px black;
+  font-size: 15px;
+}
+
+.fa-brands {
+  margin: 10px;
+}
+
+/*Footer*/
+
+footer {
+  font-family: var(--description-text);
+  background-color: #111;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.container_footer {
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 13px;
+  letter-spacing: 1px;
+  line-height: 25px;
+}
+
+.logo_footer {
+  background-image: url(/assets/images/IMG-4124.PNG);
+  background-size: cover;
+  height: 30vh;
+  width: 40vw;
+  background-position-y: 50%;
+}
+
+.contact_header .social-icons {
+  width: 25%;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 25px;
+  transition: all .2s ease-in-out;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+}
+
+.dev-info {
+  border-top: 1px solid #4c4c4c;
+  padding: 20px 20px 0 20px;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #ffffff;
+}
+
+.footer_nav {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.col-md-4 {
+  font-size: 20px;
+}
+
+/*Responsividade*/
+@media screen and (max-width: 1100px) {
+  .menu {
+    height: 0;
+    width: 0;
+  }
+
+  .menu-items {
+    width: auto;
+  }
+
+  .container_ {
+    background-image: linear-gradient(2deg, #000000 -7%, #52454500 50%);
+    height: auto;
+  }
+
+  .sobre_mim {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .photo {
+    background-image: url(/assets/images/fundo-preto-e-branco.jpg);
+    -webkit-mask-image: linear-gradient(0deg, transparent 0%, black 20%);
+    height: 50vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .description {
+    margin: 5%;
+    width: auto;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container_center {
+    flex-direction: column;
+  }
+
+  .gallery {
+    grid-template-rows: repeat(8, 10vw);
+    grid-gap: 1rem;
+  }
+
+  .container2 {
+    height: auto;
+    padding: 5%;
+    gap: 20px;
+  }
+
+  .servicos {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .servico__item {
+    width: 195px;
+  }
+
+  .aspas {
+    top: -20px;
+    left: -15px;
+  }
+
+  .aspas-direita {
+    bottom: 60px;
+    left: 19px;
+
+  }
+
+  .container4 {
+    width: 100%;
+  }
+
+  .msg_final {
+    padding: 5%;
+  }
+
+  .container_footer {
+    flex-direction: column;
+  }
+
+  .logo_footer {
+    width: 100%;
+    background-position: center;
+    height: 25vh;
+  }
+
+  .col-md-4 {
+    margin: 10px;
+  }
+
+  .row {
+    padding: 0 20% 10%;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .footer_nav {
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    margin: 5px;
+    flex-direction: column;
+  }
+
+  .footer_p {
+    padding: 5px;
+  }
+
+  .parallax {
+    background-attachment: unset;
+  }
+
+  .container4 {
+    background-attachment: unset;
+  }
+}
+.animated-text {
+  font-size: 0;
+  opacity: 0;
+  animation: zoomIn 3s ease-in-out forwards;
+}
+
+@keyframes zoomIn {
+  from {
+      font-size: 0; 
+      opacity: 0;
+  }
+  to {
+      font-size: 3rem; 
+      opacity: 1;
+  }
+}
